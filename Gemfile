@@ -23,6 +23,11 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+# Use bootstrap
+gem 'bootstrap-sass'
+gem 'font-awesome-sass'
+gem 'bootstrap_form'
+
 ruby '2.2.0'
 gem 'rails_12factor', group: :production
 gem 'puma',           group: :production
