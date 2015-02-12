@@ -1,2 +1,7 @@
-<h1>Cocktails#new</h1>
-<p>Find me in app/views/cocktails/new.html.erb</p>
+<h1 class="text-center">Add a cocktail</h1>
+
+<%= bootstrap_form_for(@cocktail) do |f| %>
+  <%= f.text_field :name %>
+
+  <%= f.submit "add", class: "btn btn-success" %>
+<% end %>
