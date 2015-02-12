@@ -1,10 +1,16 @@
 <h1 class="text-center padded">La liste des cocktails</h1>
 
-<div class="text-center">
-  <% @cocktails.each do |cocktail| %>
-  <h3><%= cocktail.name %></h3>
-  <p><%= link_to "show details", cocktail_path(cocktail), class: "btn btn-success" %></p>
-  <% end %>
+<div class='container'>
+  <div class='row'>
+    <div class='col col-xs-12 col-md-6'>
+      <div class="text-center">
+        <% @cocktails.each do |cocktail| %>
+        <h3><%= cocktail.name %></h3>
+        <p><%= link_to "show details", cocktail_path(cocktail), class: "btn btn-success" %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
 
-<p class="text-center"><%= link_to "add a new cocktail", new_cocktail_path, class: "btn btn-primary" %></p>
+<p class="text-center padded"><%= link_to "add a new cocktail", new_cocktail_path, class: "btn btn-primary" %></p>
