@@ -1,6 +1,6 @@
 <h1 class="text-center">La liste des cocktails</h1>
 
-<div class="text-center">
+<div class="text-center padded">
   <% @cocktails.each do |cocktail| %>
   <h3><%= cocktail.name %></h3>
   <p><%= link_to "show details", cocktail_path(cocktail), class: "btn btn-success" %></p>
