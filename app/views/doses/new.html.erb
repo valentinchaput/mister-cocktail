@@ -1,7 +1,9 @@
-<h2>Add a dose for <%= @cocktail.name %></h2>
+<h2 class="text-center padded">Add a dose for <%= @cocktail.name %></h2>
 
 <%= bootstrap_form_for [@cocktail, @dose] do |f| %>
   <%= f.text_area :description %>
+  <%= f.select :ingredient_id,
+    Ingredient.all.map { |ingredient| [ingredient.name, ingredient.id] } %>
 
   <%= f.submit "submit", class: "btn btn-success" %>
 <% end %>

@@ -2,11 +2,14 @@ class DosesController < ApplicationController
   before_action :find_cocktail, only: [:new, :create]
 
   def new
-    @dose = Dose.new(cocktail: @cocktail)
+    @dose = Dose.new
   end
 
   def create
-    @dose = @cocktail.doses.build(dose_params)
+    @dose = Dose.new(dose_params)
+    @dose.cocktail = @cocktail
+    @dose.ingredient = Ingredient.find(dose_params[:ingredient_id].to_i)
+    # @dose = @cocktail.doses.build(dose_params)
     if @dose.save
       redirect_to cocktail_path(@cocktail)
     else
