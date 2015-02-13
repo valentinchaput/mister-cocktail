@@ -1,1 +1,14 @@
 @import "home";
+@import "cocktails/index";
+
+body {
+  margin-top: 70px;
+}
+
+.margin-none {
+  margin: 0;
+}
+
+.margin-zero-auto {
+  margin: 0 auto;
+}

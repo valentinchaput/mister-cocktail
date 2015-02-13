@@ -1,15 +1,19 @@
 <h2 class="text-center padded"><%= @cocktail.name %></h2>
 
+<div class="text-center padded">
+  <% if @cocktail.picture_file_name %>
+    <%= image_tag @cocktail.picture.url(:medium) %>
+  <% end %>
+</div>
+
 <div class="text-left padded">
   <ul>
-    <% if @cocktail.picture_file_name %>
-      <%= image_tag @cocktail.picture.url(:medium) %>
-    <% end %>
     <% @cocktail.doses.each do |dose| %>
       <li><%= dose.description %> of <%= dose.ingredient.name %> <%= link_to "", cocktail_dose_path(@cocktail, dose), method: :delete, data: { confirm: "are you sure?" }, class: "fa fa-trash-o" %></li>
     <% end %>
   </ul>
 </div>
+
 
 <div class="text-center padded">
 <%= link_to "add a dose", new_cocktail_dose_path(@cocktail), class: "btn btn-warning" %>

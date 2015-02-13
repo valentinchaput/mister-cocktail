@@ -1,8 +1,19 @@
-<h1 class="text-center padded">La liste des cocktails</h1>
+<div class='container text-center padded'>
+  <div class="text-center" id="title-div">
+    <table>
+      <td>
+        <h1 class="margin-none">La liste des cocktails</h1>
+      </td>
+      <td>
+        &nbsp;&nbsp;<%= link_to "add a new cocktail", new_cocktail_path, class: "btn btn-primary" %>
+      </td>
+    </table>
+  </div>
+</div>
 
 <div class='container'>
   <div class='row'>
-    <% @cocktails.each do |cocktail| %>
+  <% @cocktails.each do |cocktail| %>
     <div class='col col-xs-12 col-sm-6 col-md-4 col-lg-3'>
       <div class='card-white'>
         <div class="text-center imageContainer">
@@ -23,5 +34,12 @@
     <% end %>
   </div>
 </div>
-
-<p class="text-center padded"><%= link_to "add a new cocktail", new_cocktail_path, class: "btn btn-primary" %></p>
+<!-- pour avoir la table du 1er containe centrée (fait par Erward) -->
+<% content_for :js do %>
+  <% javascript_tag do %>
+    $(document).ready(function() {
+      var marginLeft = ($('.container').first().width() - $('table').width()) / 2;
+      $('#title-div').css('margin-left', marginLeft);
+    })
+  <% end %>
+<% end %>
