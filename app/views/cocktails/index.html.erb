@@ -40,6 +40,10 @@
     $(document).ready(function() {
       var marginLeft = ($('.container').first().width() - $('table').width()) / 2;
       $('#title-div').css('margin-left', marginLeft);
+      $(window).on('resize', function() {
+        var marginLeft = ($('.container').first().width() - $('table').width()) / 2;
+        $('#title-div').css('margin-left', marginLeft);
+      })
     })
   <% end %>
 <% end %>

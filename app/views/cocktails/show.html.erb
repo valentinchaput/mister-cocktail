@@ -1,6 +1,6 @@
-<h2 class="text-center padded"><%= @cocktail.name %></h2>
+<h2 class="text-center"><%= @cocktail.name %></h2>
 
-<div class="text-center padded">
+<div class="text-center">
   <% if @cocktail.picture_file_name %>
     <%= image_tag @cocktail.picture.url(:medium) %>
   <% end %>
