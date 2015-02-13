@@ -2,14 +2,25 @@
 
 <div class='container'>
   <div class='row'>
-    <div class='col col-xs-12'>
-      <div class="text-center">
-        <% @cocktails.each do |cocktail| %>
-        <h3><%= cocktail.name %></h3>
-        <p><%= link_to "show details", cocktail_path(cocktail), class: "btn btn-success" %></p>
+    <% @cocktails.each do |cocktail| %>
+    <div class='col col-xs-12 col-sm-6 col-md-4 col-lg-3'>
+      <div class='card-white'>
+        <div class="text-center imageContainer">
+        <% if cocktail.picture_file_name %>
+          <%= image_tag cocktail.picture.url(:thumb) %>
+        <% else %>
+          <%= image_tag 'cocktail_thumb.svg' %>
         <% end %>
+        </div>
+        <div class="text-center nameContainer">
+          <h3><%= cocktail.name %></h3>
+        </div>
+        <div class="text-center btnContainer">
+          <p><%= link_to "show details", cocktail_path(cocktail), class: "btn btn-success" %></p>
+        </div>
       </div>
     </div>
+    <% end %>
   </div>
 </div>
 
