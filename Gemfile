@@ -34,6 +34,9 @@ gem 'puma',           group: :production
 
 gem 'figaro'
 
+gem 'aws-sdk', '< 2.0'
+gem 'paperclip'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -42,6 +45,9 @@ gem 'figaro'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+gem 'better_errors', group: :development
+gem 'binding_of_caller', group: :development
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -55,3 +61,4 @@ group :development, :test do
 end
 
 gem 'rspec-rails', group: [ :test ]
+

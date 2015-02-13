@@ -1,7 +1,8 @@
 <h1 class="text-center padded">Add a cocktail</h1>
 
-<%= bootstrap_form_for(@cocktail) do |f| %>
+<%= bootstrap_form_for(@cocktail, html: { multipart: true }) do |f| %>
   <%= f.text_field :name %>
+  <%= f.file_field :picture %>
 
   <%= f.submit "add", class: "btn btn-success" %>
 <% end %>

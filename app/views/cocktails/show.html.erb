@@ -2,6 +2,9 @@
 
 <div class="text-left padded">
   <ul>
+    <% if @cocktail.picture_file_name %>
+      <%= image_tag @cocktail.picture.url(:medium) %>
+    <% end %>
     <% @cocktail.doses.each do |dose| %>
       <li><%= dose.description %> of <%= dose.ingredient.name %> <%= link_to "delete", dose_path, method: :delete, data: { confirm: "are you sure?" }, class: "btn btn-danger" %></li>
     <% end %>
