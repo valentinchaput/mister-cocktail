@@ -1,3 +1,4 @@
 == README
 
 First Rails solo project made in a few hours during www.lewagon.org fullstack bootcamp
+Find it at http://valentinchaput-mister-cocktail.herokuapp.com/
